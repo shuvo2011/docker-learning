@@ -4,9 +4,9 @@
 
 প্রথমে সঠিকভাবে file structure তৈরি করতে হবে, তারপর নিচের command টি run করতে হবে:
 
-\```bash
+```bash
 npm install
-\```
+```
 
 `npm install` করলে স্বয়ংক্রিয়ভাবে `package-lock.json` file তৈরি হবে।
 ⚠️ এই file টি না থাকলে কোনোভাবেই Docker image build হবে না।
@@ -15,9 +15,9 @@ npm install
 
 ## ধাপ ২: Docker Image Build করা
 
-\```bash
+```bash
 docker build -t hello .
-\```
+```
 
 এখানে:
 - `-t` → tag বা নাম নির্ধারণ করে
@@ -28,17 +28,17 @@ docker build -t hello .
 
 Build হওয়ার পর সব image দেখতে:
 
-\```bash
+```bash
 docker images
-\```
+```
 
 ---
 
 ## ধাপ ৩: Docker Container তৈরি ও Run করা
 
-\```bash
+```bash
 docker run --name hello-container -p 5000:5000 hello:latest
-\```
+```
 
 এখানে:
 - `--name hello-container` → container এর নাম
