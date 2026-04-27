@@ -44,3 +44,76 @@ docker run --name hello-container -p 5000:5000 hello:latest
 - `--name hello-container` → container এর নাম
 - `-p 5000:5000` → বাম পাশেরটি তোমার PC এর port, ডান পাশেরটি Docker এর port
 - `hello:latest` → যে image থেকে container তৈরি হবে তার নাম
+
+
+---
+
+## Docker process check kora
+
+```bash
+docker ps
+docker ps -a
+```
+
+এখানে:
+- `ps` → process মানে কতগুলো ডকার রান হচ্ছে। প্রত্যেকটা ডকার একটা প্রসেস হিসেবে রান হয়। 
+- `ps -a` → a means all state. এখানে a দিলে সবগুলা দেখাবে যেইগুলা স্টপ হয়ে আছে। নরমালই সেইগুলা দেখায় না। 
+
+
+---
+
+## Docker container stop kora
+
+```bash
+docker container stop 4eef 
+```
+
+এখানে:
+- `4eef` →  এখানে 4eef হইল ডকার কন্টেইনার আইডি এর ফার্স্ট পার্ট। এখানে পুরো ডকার কন্টেইনার আইডি বা ডকার কন্টেইনার আইডির পার্ট বা নাম দিলেও হবে। 
+
+
+---
+
+## Docker container delete
+
+```bash
+docker rm 4eef 
+```
+
+এখানে:
+- `rm` →  remove
+
+
+---
+
+## Docker Volume
+
+# volume create
+```bash
+docker volume create my-vol 
+```
+
+এখানে:
+- `my-vol` →  volume name
+
+# volume check
+```bash
+docker volume ls 
+```
+
+# volume inspect details
+```bash
+docker volume inspect my-vol 
+```
+
+# Docker run with interactive mode relation with volume
+```bash
+docker run -it --name vol-demo -v my-vol:/data ubuntu bash
+```
+
+এখানে:
+- `vol-demo` →  eta hocche container name
+- `my-vol:/data` →  eta hocche volume jeita create korlam seita kothai thakbe
+- `ubuntu` →  Ubuntu hocche docker hub theke ekta docker image
+- `bash` →  bash hocche terminal er dhoron
+
