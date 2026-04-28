@@ -117,3 +117,22 @@ docker run -it --name vol-demo -v my-vol:/data ubuntu bash
 - `ubuntu` →  Ubuntu hocche docker hub theke ekta docker image
 - `bash` →  bash hocche terminal er dhoron
 
+
+# Unnamed unused docker volume remove
+```bash
+docker volume prune
+```
+
+## Docker Bind Mounts
+```bash
+docker run -it --name bind-demo -v "${PWD}:/app" -w /app -p 5000:5000 node:20-alpine sh -c "npm install -g nodemon && npm install && nodemon --watch /app --legacy-watch index.js"
+```
+
+ekhane: 
+- `docker run` →  নতুন container চালু করো
+- `-it` →  Interactive terminal (input দেওয়া যাবে)
+- `-v "${PWD}:/app"` →  Bind Mount — তোমার current folder কে container এর /app এ connect করো
+- `-w /app` →  Container এর working directory হবে /app
+- `-p 5000:5000` →  Host এর port 5000 → Container এর port 5000
+- `node:20-alpine` →  Node.js v20 এর lightweight Alpine image use করো
+- `sh -c "..."` →  Shell এ command চালাও
