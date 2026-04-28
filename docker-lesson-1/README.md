@@ -112,10 +112,10 @@ docker run -it --name vol-demo -v my-vol:/data ubuntu bash
 ```
 
 এখানে:
-- `vol-demo` →  eta hocche container name
-- `my-vol:/data` →  eta hocche volume jeita create korlam seita kothai thakbe
-- `ubuntu` →  Ubuntu hocche docker hub theke ekta docker image
-- `bash` →  bash hocche terminal er dhoron
+- `vol-demo` → এটা হচ্ছে container এর নাম
+- `my-vol:/data` → এটা হচ্ছে volume যেটা create করলাম, সেটা container এর `/data` folder এ mount হবে
+- `ubuntu` → Docker Hub থেকে আনা একটা Docker image
+- `bash` → Container এর ভেতরে Bash terminal চালু করো
 
 
 # Unnamed unused docker volume remove
